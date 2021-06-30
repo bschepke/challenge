@@ -5,6 +5,7 @@ trigger:
   paths:
     include:
     - pipeline1/*
+    - pipeline1.yml
 
 pool: Default
 
