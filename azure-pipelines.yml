@@ -9,8 +9,8 @@ steps:
   env:
     ARM_ACCESS_KEY: $(ARM_ACCESS_KEY)
 
-- script: terraform plan -out vm.tfplan
-  displayName: 'terraform plan -var="resource-group-name=$(RESOURCE_GROUP_NAME)"'
+- script: terraform plan -out vm.tfplan -var="resource-group-name=$(RESOURCE_GROUP_NAME)"
+  displayName: 'terraform plan'
 
-- script: terraform apply vm.tfplan
-  displayName: 'terraform apply -var="resource-group-name=$(RESOURCE_GROUP_NAME)" -auto-approve'
+- script: terraform apply vm.tfplan -var="resource-group-name=$(RESOURCE_GROUP_NAME)" -auto-approve
+  displayName: 'terraform apply'
