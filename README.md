@@ -1,6 +1,12 @@
 # Challenge
 
-[![Build Status](https://dev.azure.com/schepkebailey/challenge/_apis/build/status/bschepke.challenge?branchName=master)](https://dev.azure.com/schepkebailey/challenge/_build/latest?definitionId=1&branchName=master)
+Pipeline 1
+
+[![Build Status](https://dev.azure.com/schepkebailey/challenge/_apis/build/status/Pipeline%201?branchName=master)](https://dev.azure.com/schepkebailey/challenge/_build/latest?definitionId=4&branchName=master)
+
+PipeLine 2
+
+[![Build Status](https://dev.azure.com/schepkebailey/challenge/_apis/build/status/Pipeline%202?branchName=master)](https://dev.azure.com/schepkebailey/challenge/_build/latest?definitionId=5&branchName=master)
 
 ## Pipeline Variables
 
