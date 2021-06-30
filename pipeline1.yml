@@ -16,10 +16,10 @@ steps:
   env:
     ARM_ACCESS_KEY: $(ARM_ACCESS_KEY)
 
-- script: terraform plan -out vm.tfplan -var="resource-group-name=$(RESOURCE_GROUP_NAME)"
+- script: terraform plan -out container.tfplan -var="resource-group-name=$(RESOURCE_GROUP_NAME)"
   displayName: 'terraform plan'
   workingDirectory: pipeline1/
 
-- script: terraform apply -auto-approve vm.tfplan
+- script: terraform apply -auto-approve container.tfplan
   displayName: 'terraform apply'
   workingDirectory: pipeline1/
