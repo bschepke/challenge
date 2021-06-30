@@ -13,5 +13,5 @@ resource "azurerm_container_registry" "acrchallengeprod1" {
 	location = azurerm_resource_group.rg-challenge-prod-1.location
 	sku = "Premium"
 	admin_enabled = false
-	georeplication_locations = ["East US", "Europe"]
+	georeplication_locations = ["East US", "West Europe"]
 }
