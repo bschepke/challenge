@@ -1,3 +1,8 @@
+parameters:
+- name: group
+  type: string
+  default: 'rg-vault'
+
 trigger:
   branches:
     include: 
@@ -16,7 +21,7 @@ steps:
   env:
     ARM_ACCESS_KEY: $(ARM_ACCESS_KEY)
 
-- script: terraform plan -out vault.tfplan -var="resource-group-name=$(RESOURCE_GROUP_NAME)"
+- script: terraform plan -out vault.tfplan -var="resource-group-name=${{ parameters.group }}"
   displayName: 'terraform plan'
   workingDirectory: pipeline2/
 
