@@ -12,5 +12,5 @@ steps:
 - script: terraform plan -out vm.tfplan -var="resource-group-name=$(RESOURCE_GROUP_NAME)"
   displayName: 'terraform plan'
 
-- script: terraform apply vm.tfplan -var="resource-group-name=$(RESOURCE_GROUP_NAME)" -auto-approve
+- script: terraform apply -auto-approve vm.tfplan
   displayName: 'terraform apply'
