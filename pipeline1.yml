@@ -4,18 +4,21 @@ trigger:
     - master
   paths:
     include:
-    - /pipeline1/
+    - pipeline1/*
 
 pool: Default
 
 steps:
 - script: terraform init
   displayName: 'terraform init'
+  workingDirectory: pipeline1/
   env:
     ARM_ACCESS_KEY: $(ARM_ACCESS_KEY)
 
 - script: terraform plan -out vm.tfplan -var="resource-group-name=$(RESOURCE_GROUP_NAME)"
   displayName: 'terraform plan'
+  workingDirectory: pipeline1/
 
 - script: terraform apply -auto-approve vm.tfplan
   displayName: 'terraform apply'
+  workingDirectory: pipeline1/
