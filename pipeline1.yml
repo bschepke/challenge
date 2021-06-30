@@ -1,7 +1,9 @@
 trigger:
-- master
-paths:
-  include:
+  branches:
+    include: 
+    - master
+  paths:
+    include:
     - /pipeline1/
 
 pool: Default
