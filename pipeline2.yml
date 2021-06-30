@@ -1,5 +1,6 @@
 parameters:
 - name: group
+  displayName: Resource Group
   type: string
   default: 'rg-vault'
 

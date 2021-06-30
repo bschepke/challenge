@@ -25,8 +25,8 @@ resource "random_id" "containerid" {
   byte_length = 8
 }
 
-resource "azurerm_container_registry" "acrchallenge" {
-  name                = "acrchallenge${random_id.containerid.dec}"
+resource "azurerm_container_registry" "registry" {
+  name                = "acr${random_id.containerid.dec}"
   resource_group_name = azurerm_resource_group.resource-group.name
   location            = azurerm_resource_group.resource-group.location
   sku                 = "Premium"
