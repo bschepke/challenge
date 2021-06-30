@@ -5,9 +5,11 @@ resources:
   - pipeline: pipeline1
     source: pipeline1
     trigger:
-    - master
+      branches:
+        include:
+        - master
       paths:
-      include:
+        include:
         - pipeline1/
     steps:
     workingDirectory: pipeline1/
