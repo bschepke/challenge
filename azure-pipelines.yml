@@ -10,7 +10,7 @@ resources:
         - master
       paths:
         include:
-        - pipeline1/
+        - pipeline1
     steps:
     - script: terraform init
       workingDirectory: pipeline1/
