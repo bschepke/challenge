@@ -3,7 +3,7 @@ provider "azurerm" {
 }
 
 resource "azurerm_resource_group" "rg-challenge-prod-1" {
-  name     = "rg-challenge-prod-001"
+  name     = "rg-challenge-prod-1"
   location = "East US"
 }
 
