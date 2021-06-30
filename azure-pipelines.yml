@@ -1,8 +1,3 @@
-# Starter pipeline
-# Start with a minimal pipeline that you can customize to build and deploy your code.
-# Add steps that build, run tests, deploy, and more:
-# https://aka.ms/yaml
-
 trigger:
 - master
 
@@ -15,7 +10,7 @@ steps:
     ARM_ACCESS_KEY: $(ARM_ACCESS_KEY)
 
 - script: terraform plan -out vm.tfplan
-  displayName: 'terraform plan'
+  displayName: 'terraform plan -var="resource-group-name=$(RESOURCE_GROUP_NAME)"'
 
 - script: terraform apply vm.tfplan
-  displayName: 'terraform apply'
+  displayName: 'terraform apply -var="resource-group-name=$(RESOURCE_GROUP_NAME)" -auto-approve'

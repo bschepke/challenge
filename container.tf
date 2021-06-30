@@ -1,13 +1,11 @@
-resource "azurerm_resource_group" "rg-challenge-prod-1" {
-  name     = "rg-challenge-prod-1"
-  location = "East US"
+resource "random_uuid" "container-uuid" {
 }
 
-resource "azurerm_container_registry" "acrchallengeprod1" {
-  name                     = "acrchallengeprod1"
-  resource_group_name      = azurerm_resource_group.rg-challenge-prod-1.name
-  location                 = azurerm_resource_group.rg-challenge-prod-1.location
+resource "azurerm_container_registry" "acrchallenge" {
+  name                     = "acrchallenge${random_uuid.container-uuid.result}"
+  resource_group_name      = azurerm_resource_group.resource-group.name
+  location                 = azurerm_resource_group.resource-group.location
   sku                      = "Premium"
   admin_enabled            = false
-  georeplication_locations = ["West Europe"]
+  georeplication_locations = ["westeurope"]
 }
