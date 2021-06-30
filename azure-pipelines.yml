@@ -12,14 +12,16 @@ resources:
         include:
         - pipeline1/
     steps:
-    workingDirectory: pipeline1/
     - script: terraform init
+      workingDirectory: pipeline1/
       displayName: 'terraform init'
       env:
         ARM_ACCESS_KEY: $(ARM_ACCESS_KEY)
 
     - script: terraform plan -out vm.tfplan -var="resource-group-name=$(RESOURCE_GROUP_NAME)"
+      workingDirectory: pipeline1/
       displayName: 'terraform plan'
 
     - script: terraform apply -auto-approve vm.tfplan
+      workingDirectory: pipeline1/
       displayName: 'terraform apply'
