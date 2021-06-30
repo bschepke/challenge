@@ -94,4 +94,3 @@ resource "azurerm_linux_virtual_machine" "myvm" {
     public_key = file("~/.ssh/id_rsa.pub")
   }
 }
-
