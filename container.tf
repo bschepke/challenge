@@ -1,7 +1,3 @@
-provider "azurerm" {
-  features {}
-}
-
 resource "azurerm_resource_group" "rg-challenge-prod-1" {
   name     = "rg-challenge-prod-1"
   location = "East US"

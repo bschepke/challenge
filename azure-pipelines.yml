@@ -11,11 +11,8 @@ pool: Default
 steps:
 - script: terraform init
   displayName: 'terraform init'
-
-- script: terraform import "azurerm_resource_group.rg-challenge-prod-1" "/subscriptions/$SUBSCRIPTION/resourceGroups/rg-challenge-prod-1"
-  displayName: 'terraform import'
   env:
-    SUBSCRIPTION: $(SUBSCRIPTION)
+    ARM_ACCESS_KEY: $(ARM_ACCESS_KEY)
 
 - script: terraform plan -out vm.tfplan
   displayName: 'terraform plan'
