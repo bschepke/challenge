@@ -9,11 +9,15 @@ trigger:
 pool: Default
 
 steps:
+- script: terraform import "azurerm_resource_group.rg-challenge-prod-1" "/subscriptions/$SUBSCRIPTION/resourceGroups/rg-challenge-prod-1"
+  displayName: 'terraform import'
+  env: SUBSCRIPTION: $(SUBSCRIPTION)
+
 - script: terraform init
-  displayName: 'Terraform init'
+  displayName: 'terraform init'
 
 - script: terraform plan -out vm.tfplan
-  displayName: 'Terraform plan'
+  displayName: 'terraform plan'
 
 - script: terraform apply vm.tfplan
-  displayName: 'Terraform apply'
+  displayName: 'terraform apply'
